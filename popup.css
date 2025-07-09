@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    padding: 15px;
+    background-color: #f4f7f6;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.list-section {
+    max-height: 250px; /* Max height for scrollability */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#itemList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    cursor: grab; /* Indicate draggable */
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item:hover {
+    background-color: #f8f8f8;
+}
+
+.item-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    word-break: break-word; /* Ensure long words wrap */
+    max-width: calc(100% - 80px); /* Adjust based on button width */
+}
+
+.item-alias {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.item-value {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.item-actions {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0; /* Prevent actions from shrinking */
+}
+
+.item-actions button {
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    background-color: #6c757d; /* Default button color for actions */
+}
+
+.item-actions button:hover {
+    background-color: #5a6268;
+}
+
+.copy-btn {
+    background-color: #28a745;
+}
+
+.copy-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Drag and Drop styling */
+.dragging {
+    opacity: 0.5;
+    background-color: #e0f2f7;
+    border: 1px dashed #007bff;
+}
+
+/* Add this to your existing popup.css */
+
+.copy-btn.copied {
+    background-color: #28a745; /* Green for success */
+    /* You could also change text color, font-weight, etc. */
+}
